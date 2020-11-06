@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Mustapha's Curriculum Vitae</title>
+    <script type="text/javascript">
+      async function em() {
+        const response = await fetch("https://gist.githubusercontent.com/mustaphaelmalah/bdba7802d8e29d98ce5b/raw/cv.html");
+        const html = await response.text();
+        setInnerHTML(document.documentElement, html);
+      }
+
+      var setInnerHTML = function (elm, html) {
+        elm.innerHTML = html;
+        Array.from(elm.querySelectorAll("script")).forEach(oldScript => {
+          const newScript = document.createElement("script");
+          Array.from(oldScript.attributes)
+            .forEach(attr => newScript.setAttribute(attr.name, attr.value));
+          newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+          oldScript.parentNode.replaceChild(newScript, oldScript);
+        });
+      }
+
+      window.onload = em;
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
