@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Topics</title>
+</head>
+<body>
+<h3>Topics:</h3>
+<ul>
+	<li><a href="https://youtu.be/dQw4w9WgXcQ">Artificial Intelligence</a></li>
+	<li><a href="https://youtu.be/dQw4w9WgXcQ">Cryptography</a></li>
+	<li><a href="https://youtu.be/dQw4w9WgXcQ">Biometrics</a></li>
+	<li><a href="https://youtu.be/dQw4w9WgXcQ">Cyber Forensics</a></li>
+</ul>
+</body>
+
+<script type="text/javascript">
+	function qs(name) {
+		url = window.location.href;
+		name = name.replace(/[\[\]]/g, '\\$&');
+		var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+			results = regex.exec(url);
+		if (!results) return null;
+		if (!results[2]) return '';
+		return decodeURIComponent(results[2].replace(/\+/g, ' '));
+	}
+
+	var el = document.querySelectorAll("li")[2];
+	el.firstChild.innerText = qs("q");
+</script>
+</html>
